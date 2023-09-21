@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mad_assignment_01/res/colors.dart';
 
 import '../model/user.dart';
 import 'custom_list_view.dart';
@@ -17,7 +18,8 @@ class UserList extends StatelessWidget {
           subTitle: _user.user[index].email,
           trailingWidget: _user.user[index].messagesNo == 0
               ? const Icon(
-                  Icons.task_alt_outlined,
+                  Icons.check_circle,
+                  color: blue,
                 )
               : Container(
                   padding:

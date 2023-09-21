@@ -21,7 +21,9 @@ class CustomListView extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
       ),
       child: ListTile(
-        leading: const CircleAvatar(),
+        leading: CircleAvatar(
+          child: Image.asset('assets/images/imgB.png'),
+        ),
         title: Text(
           title.toString(),
           style: const TextStyle(

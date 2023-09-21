@@ -10,7 +10,12 @@ class Card2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(5),
-      padding: const EdgeInsets.all(5),
+      padding: const EdgeInsets.only(
+        left: 5,
+        top: 5,
+        right: 8,
+        bottom: 10,
+      ),
       decoration: BoxDecoration(
         color: Colors.grey.shade300,
       ),
@@ -68,7 +73,10 @@ class Card2 extends StatelessWidget {
                   ),
                   child: Text(
                     'Add another account - so you can switch between theme easily',
-                    style: TextStyle(color: gray),
+                    style: TextStyle(
+                      color: gray,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ),
                 Padding(
@@ -103,6 +111,7 @@ class Card2 extends StatelessWidget {
                     color: Colors.white,
                     size: 20,
                   ),
+                  onPressed: null,
                 ),
               ],
             ),

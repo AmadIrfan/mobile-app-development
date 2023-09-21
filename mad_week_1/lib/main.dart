@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mad_week_1/windows/home_page.dart';
 
 import './windows/splash_screen.dart';
 

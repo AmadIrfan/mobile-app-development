@@ -3,8 +3,15 @@ import 'package:mad_assignment_01/res/colors.dart';
 
 import '../widget/custom_button.dart';
 
-class Card1 extends StatelessWidget {
-  const Card1({super.key});
+class Card1 extends StatefulWidget {
+  Card1({super.key});
+
+  @override
+  State<Card1> createState() => _Card1State();
+}
+
+class _Card1State extends State<Card1> {
+  final TextEditingController _controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +19,7 @@ class Card1 extends StatelessWidget {
       color: Colors.grey.shade300,
       padding: const EdgeInsets.all(5),
       child: Container(
-        width: 350,
+        width: double.infinity,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
@@ -63,6 +70,7 @@ class Card1 extends StatelessWidget {
                 'Enter your email that you used to register your account, so we can send you a link to reset your password',
                 style: TextStyle(
                   color: gray,
+                  fontWeight: FontWeight.w500,
                 ),
               ),
             ),
@@ -85,36 +93,64 @@ class Card1 extends StatelessWidget {
                 ),
               ),
             ),
-            TextFormField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Theme.of(context)
-                        .inputDecorationTheme
-                        .outlineBorder!
-                        .color,
-                    width: 2,
-                    // Theme.of(context)
-                    // .inputDecorationTheme
-                    // .outlineBorder!
-                    // .width,
-                  ),
-                  borderRadius: const BorderRadius.all(
-                    Radius.circular(10),
-                  ),
-                ),
-                contentPadding: const EdgeInsets.symmetric(
-                  vertical: 2,
-                  horizontal: 20,
-                ),
+            // TextFormField(
+            //   controller: _controller,
+            //   decoration: InputDecoration(
+            //     border: OutlineInputBorder(
+            //       borderSide: BorderSide(
+            //         color: Theme.of(context)
+            //             .inputDecorationTheme
+            //             .outlineBorder!
+            //             .color,
+            //         width: 2,
+            //         // Theme.of(context)
+            //         // .inputDecorationTheme
+            //         // .outlineBorder!
+            //         // .width,
+            //       ),
+            //       borderRadius: const BorderRadius.all(
+            //         Radius.circular(10),
+            //       ),
+            //     ),
+            //     contentPadding: const EdgeInsets.symmetric(
+            //       vertical: 2,
+            //       horizontal: 20,
+            //     ),
+            //   ),
+            //   style: const TextStyle(
+            //     fontWeight: FontWeight.w500,
+            //   ),
+            // ),
+            Container(
+              alignment: Alignment.centerLeft,
+              width: double.infinity,
+              padding: const EdgeInsets.symmetric(
+                vertical: 10,
+                horizontal: 20,
               ),
-              style: const TextStyle(
-                fontWeight: FontWeight.w500,
+              decoration: BoxDecoration(
+                border: Border.all(color: blue, width: 1.5),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Text(
+                _controller.text,
+                style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  color: Colors.grey.shade600,
+                ),
               ),
             ),
-            const CustomButton(
+            CustomButton(
               btnTitle: 'Send link',
               icon: null,
+              onPressed: () {
+                if (_controller.text.isEmpty) {
+                  _controller.text = 'Panjipradana@gmail.com';
+                } else {
+                  _controller.text = '';
+                }
+                setState(() {});
+              },
             ),
             Divider(
               color: Colors.grey.shade300,
