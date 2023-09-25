@@ -18,6 +18,7 @@ class _Card1State extends State<Card1> {
     return Container(
       color: Colors.grey.shade300,
       padding: const EdgeInsets.all(5),
+      margin: const EdgeInsets.all(5),
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(
@@ -64,7 +65,7 @@ class _Card1State extends State<Card1> {
               padding: EdgeInsets.only(
                 top: 10,
                 bottom: 20,
-                right: 15,
+                right: 80,
               ),
               child: Text(
                 'Enter your email that you used to register your account, so we can send you a link to reset your password',
@@ -181,3 +182,32 @@ class _Card1State extends State<Card1> {
     );
   }
 }
+
+            // TextFormField(
+            //   controller: _controller,
+            //   decoration: InputDecoration(
+            //     border: OutlineInputBorder(
+            //       borderSide: BorderSide(
+            //         color: Theme.of(context)
+            //             .inputDecorationTheme
+            //             .outlineBorder!
+            //             .color,
+            //         width: 2,
+            //         // Theme.of(context)
+            //         // .inputDecorationTheme
+            //         // .outlineBorder!
+            //         // .width,
+            //       ),
+            //       borderRadius: const BorderRadius.all(
+            //         Radius.circular(10),
+            //       ),
+            //     ),
+            //     contentPadding: const EdgeInsets.symmetric(
+            //       vertical: 2,
+            //       horizontal: 20,
+            //     ),
+            //   ),
+            //   style: const TextStyle(
+            //     fontWeight: FontWeight.w500,
+            //   ),
+            // ),

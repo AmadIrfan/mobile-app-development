@@ -22,7 +22,11 @@ class CustomButton extends StatelessWidget {
       cursor: MaterialStateMouseCursor.clickable,
       child: InkWell(
         onTap: () {
-          onPressed!();
+          if (onPressed != null) {
+            onPressed!();
+          } else {
+            print('null');
+          }
         },
         child: Container(
           margin: const EdgeInsets.symmetric(vertical: 25),

@@ -69,10 +69,10 @@ class Card2 extends StatelessWidget {
                   padding: EdgeInsets.only(
                     top: 10,
                     bottom: 20,
-                    right: 55,
+                    right: 140,
                   ),
                   child: Text(
-                    'Add another account - so you can switch between theme easily',
+                    'Add another account - so you can switch between theme easily.',
                     style: TextStyle(
                       color: gray,
                       fontWeight: FontWeight.w500,
