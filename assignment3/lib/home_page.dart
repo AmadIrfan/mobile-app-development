@@ -1,5 +1,7 @@
-import 'package:assignment3/windows/widgets_1.dart';
 import 'package:flutter/material.dart';
+import '../windows1/widget_5_8.dart';
+import '../windows1/widget_9_12.dart';
+import '../windows1/widgets_1_4.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({
@@ -41,8 +43,8 @@ class _MyHomePageState extends State<MyHomePage> {
         body: const TabBarView(
           children: [
             CustomWidgets1(),
-            Icon(Icons.abc),
-            Icon(Icons.abc),
+            CustomWidgets2(),
+            CustomWidgets3(),
           ],
         ),
       ),
