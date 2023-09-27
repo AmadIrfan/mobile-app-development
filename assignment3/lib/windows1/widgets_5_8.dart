@@ -26,7 +26,7 @@ class _CustomWidgets2State extends State<CustomWidgets2> {
         children: [
           CustomExpansionTile(
             leading: const CircleAvatar(
-              child: Text('1'),
+              child: Text('3'),
             ),
             text: const Text(' ReOrderable List'),
             children: [
@@ -64,7 +64,7 @@ class _CustomWidgets2State extends State<CustomWidgets2> {
           ),
           CustomExpansionTile(
             leading: const CircleAvatar(
-              child: Text('2'),
+              child: Text('4'),
             ),
             text: const Text('Drag able widgets'),
             children: [
@@ -168,7 +168,6 @@ class _CustomWidgets2State extends State<CustomWidgets2> {
                         );
                       },
                     ),
-                    
                   ],
                 ),
               ),

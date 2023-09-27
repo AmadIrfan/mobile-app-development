@@ -1,7 +1,8 @@
+import 'package:assignment3/windows2/file.dart';
+import 'package:assignment3/windows2/file1.dart';
 import 'package:flutter/material.dart';
-import '../windows1/widget_5_8.dart';
-import '../windows1/widget_9_12.dart';
-import '../windows1/widgets_1_4.dart';
+import 'windows1/widgets_9_12.dart';
+import '../windows1/ont_to_20.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({
@@ -18,6 +19,13 @@ class _MyHomePageState extends State<MyHomePage> {
     return DefaultTabController(
       length: 3,
       child: Scaffold(
+        drawer: const Drawer(
+          child: Center(
+            child: Text(
+              'This is Drawer.',
+            ),
+          ),
+        ),
         appBar: AppBar(
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           title: const Text('Mobile Application Development'),
@@ -42,8 +50,8 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         body: const TabBarView(
           children: [
-            CustomWidgets1(),
-            CustomWidgets2(),
+            First20(),
+            MyFiles(),
             CustomWidgets3(),
           ],
         ),

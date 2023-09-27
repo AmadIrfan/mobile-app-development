@@ -13,12 +13,11 @@ class _CustomWidgets1State extends State<CustomWidgets1> {
   double _h = 0;
   double _w = 0;
   double opacity = 0;
-
   double _btnTop = 60;
   double _posTop = 10;
+  
   @override
   Widget build(BuildContext context) {
-    // Offset offset = Offset(0, 0);
     return SingleChildScrollView(
       child: Column(
         children: [
