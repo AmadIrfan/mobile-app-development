@@ -1,8 +1,7 @@
-import 'package:assignment3/windows2/file.dart';
-import 'package:assignment3/windows2/file3.dart';
-
 import 'package:flutter/material.dart';
+
 import '../windows1/ont_to_20.dart';
+import '../windows2/file2.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({
@@ -80,59 +79,54 @@ class _MyHomePageState extends State<MyHomePage> {
     'Positioned',
     "ClipRRect"
   ];
+  List _item = const [
+    First20(),
+    File2(),
+  ];
+  int _page = 0;
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 2,
       child: Scaffold(
-        drawer: Drawer(
-          child: Center(
-            child: ListView.builder(
-              itemCount: list.length,
-              itemBuilder: (BuildContext context, int index) {
-                return Card(
-                  child: ListTile(
-                    leading: CircleAvatar(
-                      child: Text('${index + 1}'),
-                    ),
-                    title: Text(list[index]),
-                  ),
-                );
-              },
-            ),
-          ),
+        drawer: const Drawer(
+          child: Center(child: Text('this is a Drawer')
+              // ListView.builder(
+              //   itemCount: list.length,
+              //   itemBuilder: (BuildContext context, int index) {
+              //     return Card(
+              //       child: ListTile(
+              //         leading: CircleAvatar(
+              //           child: Text('${index + 1}'),
+              //         ),
+              //         title: Text(list[index]),
+              //       ),
+              //     );
+              //   },
+              // ),
+              ),
         ),
         appBar: AppBar(
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          title: const Text('Mobile Application Development'),
+          title: const Text('MAD'),
           actions: [
-            // DropdownButton(
-            //     items: [
-            //       DropdownMenuItem(
-            //         child: Text('item 1'),
-            //       ),
-            //       DropdownMenuItem(
-            //         child: Text('item 2'),
-            //       ),
-            //     ],
-            //     onChanged: (v) {
-            //       print(v);
-            //     }),
             PopupMenuButton(
               itemBuilder: (context) => [
-                PopupMenuItem(
+                const PopupMenuItem(
                   child: Text('item 1'),
                 ),
-                PopupMenuItem(
+                const PopupMenuItem(
                   child: Text('item 2'),
                 ),
+                // const PopupMenuItem(
+                //   child: Text('item 2'),
+                // ),
               ],
             ),
           ],
           bottom: const TabBar(
             indicatorSize: TabBarIndicatorSize.tab,
             // indicator: BoxDecoration(color: Colors.black54),
-
             tabs: [
               Tab(
                 icon: Icon(Icons.abc),
@@ -142,35 +136,44 @@ class _MyHomePageState extends State<MyHomePage> {
                 icon: Icon(Icons.abc),
                 child: Text("Tab 2"),
               ),
-              Tab(
-                icon: Icon(Icons.abc),
-                child: Text("Tab 3"),
-              ),
+              // Tab(
+              //   icon: Icon(Icons.abc),
+              //   child: Text("Tab 3"),
+              // ),
             ],
           ),
         ),
-        body: const TabBarView(
-          children: [
-            First20(),
-            MyFiles(),
-            File3(),
-          ],
-        ),
+        body: _item[_page]
+        //  const TabBarView(
+        //   children: [
+        //     First20(),
+        //     MyFiles(),
+        //     // File3(),
+        //   ],
+        // ),
+        ,
         bottomNavigationBar: BottomNavigationBar(
-          onTap: (v) {},
+          onTap: (v) {
+            setState(() {
+              _page = v;
+            });
+          },
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Colors.grey,
+          backgroundColor: Colors.green,
           items: const [
             BottomNavigationBarItem(
-              label: 'ABC',
-              icon: Icon(Icons.abc),
+              label: 'page 1',
+              icon: Icon(Icons.pages),
             ),
             BottomNavigationBarItem(
-              label: 'DEF',
-              icon: Icon(Icons.abc),
+              label: 'page 2',
+              icon: Icon(Icons.pages),
             ),
-            BottomNavigationBarItem(
-              label: 'GHI',
-              icon: Icon(Icons.abc),
-            ),
+            // BottomNavigationBarItem(
+            //   label: 'GHI',
+            //   icon: Icon(Icons.abc),
+            // ),
           ],
         ),
       ),
