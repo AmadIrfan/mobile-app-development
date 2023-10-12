@@ -63,6 +63,82 @@ class _File2State extends State<File2> {
           const SizedBox(
             height: 20,
           ),
+          const Card(
+            child: ListTile(
+              title: Text('sized box'),
+            ),
+          ),
+          const Tooltip(
+            message: "this is tool tip",
+            child: Card(
+              child: ListTile(
+                title: Text('This is toop tip'),
+              ),
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (context) => const AlertDialog(
+                  title: Text('this is dialog'),
+                  content: Text('this is dialog'),
+                ),
+              );
+            },
+            child: const Text('AlertDialog'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (context) => const SimpleDialog(
+                  title: Text('Simple Dialog'),
+                  children: [
+                    Text('this is the body.'),
+                  ],
+                ),
+              );
+            },
+            child: const Text('Simple Dialog'),
+          ),
+          const Card(
+            child: ListTile(
+              title: Text(' this is card '),
+            ),
+          ),
+          InkWell(
+            onTap: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  duration: Duration(seconds: 3),
+                  backgroundColor: Colors.green,
+                  content: Text('this is inkwell + SnackBar'),
+                ),
+              );
+            },
+            child: const Card(
+              child: ListTile(
+                title: Text('this is inkwell'),
+              ),
+            ),
+          ),
+          Card(
+            child: ListTile(
+              title: RichText(
+                text: TextSpan(
+                  text: 'Hello ',
+                  style: DefaultTextStyle.of(context).style,
+                  children: const <TextSpan>[
+                    TextSpan(
+                        text: 'bold',
+                        style: TextStyle(fontWeight: FontWeight.bold)),
+                    TextSpan(text: ' world!'),
+                  ],
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );

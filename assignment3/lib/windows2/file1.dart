@@ -32,11 +32,14 @@ class _File11State extends State<File11> {
               fontWeight: FontWeight.w800,
             ),
           ),
-          const Image(
-            height: 200,
-            fit: BoxFit.cover,
-            image: AssetImage(
-              'assets/images/download.jpeg',
+          ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: const Image(
+              height: 200,
+              fit: BoxFit.cover,
+              image: AssetImage(
+                'assets/images/download.jpeg',
+              ),
             ),
           ),
           const SizedBox(
@@ -49,19 +52,22 @@ class _File11State extends State<File11> {
               fontWeight: FontWeight.w800,
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              ..._items
-                  .map(
-                    (e) => Chip(
-                      avatar: const CircleAvatar(),
-                      padding: const EdgeInsets.all(5),
-                      label: Text(e),
-                    ),
-                  )
-                  .toList()
-            ],
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                ..._items
+                    .map(
+                      (e) => Chip(
+                        avatar: const CircleAvatar(),
+                        padding: const EdgeInsets.all(5),
+                        label: Text(e),
+                      ),
+                    )
+                    .toList()
+              ],
+            ),
           ),
           Text(
             'Filter Chip',
@@ -70,25 +76,28 @@ class _File11State extends State<File11> {
               fontWeight: FontWeight.w800,
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              ..._items.map(
-                (e) => FilterChip(
-                  padding: const EdgeInsets.all(5),
-                  label: Text(e),
-                  selected: _list.contains(e),
-                  onSelected: (v) {
-                    if (_list.contains(e)) {
-                      _list.remove(e);
-                    } else {
-                      _list.add(e);
-                    }
-                    setState(() {});
-                  },
-                ),
-              )
-            ],
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                ..._items.map(
+                  (e) => FilterChip(
+                    padding: const EdgeInsets.all(5),
+                    label: Text(e),
+                    selected: _list.contains(e),
+                    onSelected: (v) {
+                      if (_list.contains(e)) {
+                        _list.remove(e);
+                      } else {
+                        _list.add(e);
+                      }
+                      setState(() {});
+                    },
+                  ),
+                )
+              ],
+            ),
           ),
           Text(
             'Divider',
@@ -119,7 +128,6 @@ class _File11State extends State<File11> {
               );
             },
           ),
-          
         ],
       ),
     );

@@ -12,11 +12,13 @@ class MyFiles extends StatefulWidget {
 class _MyFilesState extends State<MyFiles> {
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        File11(),
-        File2(),
-      ],
+    return const SingleChildScrollView(
+      child: Column(
+        children: [
+          File11(),
+          File2(),
+        ],
+      ),
     );
   }
 }

@@ -11,6 +11,6 @@ class CustomWidget5 extends StatefulWidget {
 class _CustomWidget5State extends State<CustomWidget5> {
   @override
   Widget build(BuildContext context) {
-    return Column(children: [],);
+    return const Column(children: [],);
   }
 }
