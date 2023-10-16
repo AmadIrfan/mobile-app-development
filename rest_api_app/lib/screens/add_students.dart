@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
-import 'package:rest_api_app/api/api_calls.dart';
-import 'package:rest_api_app/models/models.dart';
-import 'package:rest_api_app/utils/utils.dart';
+import '../api/api_calls.dart';
+import '../models/models.dart';
+import '../utils/utils.dart';
 
 class AddNewStudents extends StatefulWidget {
   const AddNewStudents({super.key});

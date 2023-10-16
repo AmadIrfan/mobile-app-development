@@ -2,8 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
-import 'package:rest_api_app/models/new_student.dart';
 
+// import '../models/new_student.dart';
 import '../models/models.dart';
 
 class APICalls extends ChangeNotifier {
@@ -17,8 +17,6 @@ class APICalls extends ChangeNotifier {
       Response httpResponse = await get(url);
       final data = json.decode(httpResponse.body.toString());
       if (httpResponse.statusCode == 200) {
-        // debugPrint(data.toString());
-        debugPrint('found');
         return Students.fromJson(data);
       } else {
         debugPrint('error not found');

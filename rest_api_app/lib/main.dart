@@ -4,7 +4,7 @@ import 'package:rest_api_app/utils/utils.dart';
 
 import '../api/api_calls.dart';
 import '../screens/add_students.dart';
-import 'screens/home_page.dart';
+import '../screens/home_page.dart';
 
 void main() {
   runApp(const MyApp());

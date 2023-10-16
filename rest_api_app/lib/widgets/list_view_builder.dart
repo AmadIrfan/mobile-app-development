@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:rest_api_app/models/models.dart';
-import 'package:rest_api_app/screens/custom_title.dart';
+
+import '../models/models.dart';
+import '../screens/custom_title.dart';
 
 class ListViewBuilder extends StatelessWidget {
   const ListViewBuilder({super.key, required this.snapshot});
