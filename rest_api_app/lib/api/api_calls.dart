@@ -7,8 +7,8 @@ import 'package:http/http.dart';
 import '../models/models.dart';
 
 class APICalls extends ChangeNotifier {
-  // final host = "http://10.5.22.82:4000";
-  final host = "http://192.168.0.106:4000";
+  final host = "http://10.5.124.208:4000";
+  // final host = "http://192.168.0.106:4000";
   Future<Students> getStudents() async {
     try {
       Uri url = Uri.parse('$host/students');
